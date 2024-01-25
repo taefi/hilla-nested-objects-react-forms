@@ -1,7 +1,25 @@
 # Custom project from Hilla
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This project is a fast prototype showing how to use useForm and useFormPart hooks to
+create a form for a top level object and its nested objects.
+This is not by any mean s a complete solution, nor does it show what is the best way 
+to model the entities. It is just quick and dirty try to showcase the use of forms and
+objects with nested objects.
+
+The entities are:
+
+Employee
+|_ Manager (many to one - self reference)
+|_ ContactInfo (one to one)
+    |_ Address (one to one)
+       |_ City (many to one)
+          |_ Country (many to one)
+
+The main form of the application is the Employee form. It uses AutoGrid for listing the data
+as wel as a custom form for adding/editing the data.
+
+In addition, it leverages from AutoCrud component for simple data entry and listing of the
+Country and City entities.
 
 ## Running the application
 
@@ -22,30 +40,3 @@ ready to be deployed. The file can be found in the `target` folder after the bui
 Once the JAR file is built, you can run it using
 `java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
 `myapp-1.0-SNAPSHOT.jar` with the name of your jar).
-
-## Project structure
-
-<table style="width:100%; text-align: left;">
-  <tr><th>Directory</th><th>Description</th></tr>
-  <tr><td><code>frontend/</code></td><td>Client-side source directory</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.html</code></td><td>HTML template</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.ts</code></td><td>Frontend 
-entrypoint, bootstraps a React application</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>routes.tsx</code></td><td>React Router routes definition</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>MainLayout.tsx</code></td><td>Main 
-layout component, contains the navigation menu, uses <a href="https://hilla.dev/docs/react/components/app-layout">
-App Layout</a></td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>views/</code></td><td>UI view 
-components</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>themes/</code></td><td>Custom  
-CSS styles</td></tr>
-  <tr><td><code>src/main/java/&lt;groupId&gt;/</code></td><td>Server-side 
-source directory, contains the server-side Java views</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>Application.java</code></td><td>Server entry-point</td></tr>
-</table>
-
-## Useful links
-
-- Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).

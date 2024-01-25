@@ -1,9 +1,10 @@
-import { AppLayout } from '@hilla/react-components/AppLayout.js';
-import { DrawerToggle } from '@hilla/react-components/DrawerToggle.js';
+import { AppLayout } from '@vaadin/react-components/AppLayout.js';
+import { DrawerToggle } from '@vaadin/react-components/DrawerToggle.js';
 import Placeholder from 'Frontend/components/placeholder/Placeholder.js';
 import { useRouteMetadata } from 'Frontend/util/routing.js';
 import { Suspense, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import EmployeeCustomCrud from "Frontend/views/employee/EmployeeCustomCrud";
 
 const navLinkClasses = ({ isActive }: any) => {
   return `block rounded-m p-s ${isActive ? 'bg-primary-10 text-primary' : 'text-body'}`;
@@ -22,7 +23,13 @@ export default function MainLayout() {
           <h1 className="text-l m-0">My App</h1>
           <nav>
             <NavLink className={navLinkClasses} to="/">
-              Hello World
+              Employees
+            </NavLink>
+            <NavLink className={navLinkClasses} to="/country">
+              Countries
+            </NavLink>
+            <NavLink className={navLinkClasses} to="/city">
+                Cities
             </NavLink>
             <NavLink className={navLinkClasses} to="/about">
               About

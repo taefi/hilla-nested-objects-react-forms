@@ -1,4 +1,4 @@
 @NonNullApi
-package com.example.application.services;
+package com.github.taefi.example.domain.shared;
 
 import org.springframework.lang.NonNullApi;
