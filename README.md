@@ -1,4 +1,4 @@
-# Custom project from Hilla
+# Nested Objects and React Froms in Hilla
 
 This project is a fast prototype showing how to use useForm and useFormPart hooks to
 create a form for a top level object and its nested objects.
